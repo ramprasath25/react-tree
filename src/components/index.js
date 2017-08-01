@@ -1,8 +1,9 @@
 import React from 'react';
-import ReactTree from './tree';
 import {connect} from 'react-redux';
 import * as tree from '../actions/Treeaction';
-
+//Child component
+import ReactTree from './tree';
+//App component
 class App extends React.Component {
 	constructor() {
 		super()
@@ -10,12 +11,9 @@ class App extends React.Component {
 			query: ''
 		}
 	}
-	componentWillMount() {
-		
-	}
-	doSearch(e) {	
-		//tree.searchNode(e.target.value)
-		alert(JSON.stringify(this.props));
+	doSearch(e) {
+		// Calling search action, reducer
+		this.props.searchTree(e.target.value)
 		this.setState({
 			query: e.target.value
 		});
@@ -31,17 +29,16 @@ class App extends React.Component {
 		)
 	}
 }
-
+// Getting state from store
 const mapStateToProps = (state) => {
 	return {
 		tree : state.tree
 	}
 }
-const mapDispatchToProps = (dispatch) => {
-	
+const mapDispatchToProps = (dispatch) => {	
 	return {
-		searchTree: () => dispatch(tree.searchNode(value))
+		searchTree: (value) => dispatch(tree.searchNode(value))
 	}
 }
-
+// Connecting app component with props
 export default connect(mapStateToProps, mapDispatchToProps)(App);

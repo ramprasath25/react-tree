@@ -11,10 +11,4 @@ export function searchNode(value) {
 		type: "search_node",
 		payload: value
 	}
-	// return function(dispatch){
-	// 	dispatch({
-	// 		type: "search_node",
-	// 		payload: value
-	// 	})		
-	// }
 }

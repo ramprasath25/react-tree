@@ -1,5 +1,5 @@
 import React from 'react';
-// Tree Structure..
+// Child Tree Structure..
 class ReactTree extends React.Component {
 	render() {		
 		let childTree;

@@ -5,7 +5,6 @@ export default (state = treeStructure, action) => {
 		case "onLoad":
 			return state;
 		case "search_node":
-			alert("Came here")
 			var newState = treeStructure;
 			newState.children.filter(function(searchNode) {				
 				if(action.payload.toLowerCase() == searchNode.description.toLowerCase()){					
