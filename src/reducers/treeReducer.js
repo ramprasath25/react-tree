@@ -1,9 +1,8 @@
+// Intializing the default state..
 import treeStructure  from '../treestructure';
 
 export default (state = treeStructure, action) => {		
-	switch (action.type) {
-		case "onLoad":
-			return state;
+	switch (action.type) {		
 		case "search_node":
 			var newState = treeStructure;
 			newState.children.filter(function(searchNode) {				
@@ -12,6 +11,8 @@ export default (state = treeStructure, action) => {
 				} 
 			});			
 			return newState;
+		default:
+			return state;
 	}
 	return state;
 }

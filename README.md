@@ -20,19 +20,21 @@ This is a sample Tree view structure application using React js for learning pur
 
 
 #### <i class="icon-file"></i> Usage
+npm(Node Package Manager)
+-------------
+    - npm install
+    - npm start
+    - http://localhost:3000/ (Open the browser)
 
-    
-
+Yarn
+-------------
     - yarn install
-    - yarn start
+    - yarn dev
     - http://localhost:3000/ (Open the browser)
 
 
 ----------
     
-npm can also be used. 
-
-----------
 
 License
 -------------

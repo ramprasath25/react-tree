@@ -2,9 +2,10 @@ import React from 'react';
 import {connect} from 'react-redux';
 import * as tree from '../actions/Treeaction';
 //Child component
-import ReactTree from './tree';
+import Tree from './tree';
+
 //App component
-class App extends React.Component {
+class Wrapper extends React.Component {
 	constructor() {
 		super()
 		this.state = {
@@ -24,7 +25,7 @@ class App extends React.Component {
 				<h1>React-Redux Tree</h1>				
 					<input type="text" placeholder="Search a node.." value={this.state.query}
 						onChange={this.doSearch.bind(this)} className="css-input"/>
-				<ReactTree node={this.props.tree}/>
+				<Tree node={this.props.tree}/>
 			</div>
 		)
 	}
@@ -41,4 +42,4 @@ const mapDispatchToProps = (dispatch) => {
 	}
 }
 // Connecting app component with props
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(Wrapper);
